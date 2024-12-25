@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Fetch the JSON file
     fetch('products.json')
-        .then(response => response.json())  // Parse the JSON file
+        .then(response => response.json())  
         .then(products => {
             const dataOutput = document.getElementById('data-output');
 
-            // Iterate over the products array and create table rows
             products.forEach(product => {
                 const row = document.createElement('tr');
 
@@ -20,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 dataOutput.appendChild(row);
             });
         })
-        .catch(error => console.error('Error fetching the JSON file:', error)); // Handle errors
+        .catch(error => console.error('Error fetching the JSON file:', error)); 
 });
 
 function scrollToProducts() {
